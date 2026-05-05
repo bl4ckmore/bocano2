@@ -24,7 +24,7 @@
 }
 
 .sub {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--gray);
   line-height: 1.8;
   margin-bottom: 3rem;
@@ -47,7 +47,7 @@
 }
 
 .label {
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -61,7 +61,7 @@
   border-bottom: 1px solid var(--border);
   padding: 0.65rem 0;
   font-family: var(--sans);
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--black);
   outline: none;
   resize: none;
@@ -86,7 +86,7 @@
   border: none;
   padding: 1rem 2.5rem;
   font-family: var(--sans);
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;

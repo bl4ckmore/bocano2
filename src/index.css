@@ -9,7 +9,7 @@
   --light-gray: #f1f3f6;
   --border: #e5e7eb;
   --serif: 'Playfair Display', Georgia, serif;
-  --sans: 'Inter', system-ui, sans-serif;
+  --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --radius: 999px;
   --radius-md: 12px;
   --radius-lg: 20px;
@@ -19,6 +19,8 @@ html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 400;
   background: var(--white);
   color: var(--black);
   -webkit-font-smoothing: antialiased;

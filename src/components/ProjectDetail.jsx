@@ -56,7 +56,7 @@ export default function ProjectDetail({ project, onBack }) {
             onClick={() => openLightbox(i)}
           >
             {hasPhotos
-              ? <img src={project.gallery[i]} alt={`${project.name} ${i + 1}`} className={i === 0 ? s.imgContain : s.img}/>
+              ? <img src={project.gallery[i]} alt={`${project.name} ${i + 1}`} className={i === 0 ? s.imgContain : s.img} loading={i === 0 ? 'eager' : 'lazy'} decoding="async"/>
               : <Placeholder index={i}/>
             }
             <div className={s.photoOverlay}>

@@ -1,16 +1,21 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Nav from './components/Nav'
+import ScrollToTop from './components/ScrollToTop'
 import Footer from './components/Footer'
 import ProjectsPage from './components/ProjectsPage'
 import ProjectDetail from './components/ProjectDetail'
-import About from './components/About'
-import Contact from './components/Contact'
-import { useReveal } from './hooks/useReveal'
+import AboutPage from './pages/AboutPage'
+import ContactPage from './pages/ContactPage'
 
-export default function App() {
-  useReveal()
+function AppContent() {
   const [activeProject, setActiveProject] = useState(null)
   const [fading, setFading] = useState(false)
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.pathname !== '/') setActiveProject(null)
+  }, [location.pathname])
 
   const openProject = useCallback((project) => {
     setFading(true)
@@ -32,20 +37,28 @@ export default function App() {
 
   return (
     <>
-      <Nav onBack={activeProject ? closeProject : null} />
+      <ScrollToTop />
+      <Nav onLogoClick={activeProject ? closeProject : null} />
       <div style={{ opacity: fading ? 0 : 1, transition: 'opacity 0.28s ease' }}>
-        {activeProject
-          ? <ProjectDetail project={activeProject} onBack={closeProject} />
-          : (
-            <>
-              <ProjectsPage onOpen={openProject} />
-              <About />
-              <Contact />
-            </>
-          )
-        }
+        <Routes>
+          <Route path="/" element={
+            activeProject
+              ? <ProjectDetail project={activeProject} />
+              : <ProjectsPage onOpen={openProject} />
+          } />
+          <Route path="/about"   element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
       </div>
       <Footer />
     </>
+  )
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   )
 }

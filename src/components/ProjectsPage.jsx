@@ -41,7 +41,7 @@ export default function ProjectsPage({ onOpen }) {
           >
             <div className={s.imgWrap}>
               {project.cover
-                ? <img src={project.cover} alt={project.name} className={i === 0 ? s.imgContain : s.img}/>
+                ? <img src={project.cover} alt={project.name} className={i === 0 ? s.imgContain : s.img} loading={i < 4 ? 'eager' : 'lazy'} decoding="async"/>
                 : <Placeholder index={i}/>
               }
               <div className={s.overlay}>
