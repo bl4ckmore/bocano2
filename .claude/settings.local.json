@@ -8,7 +8,8 @@
       "PowerShell(cmd /c \"dir /b \"\"D:\\\\bocano\\\\bocano_extracted\\\\home3\\\\\"\"\")",
       "Bash(npm install *)",
       "WebFetch(domain:mua.ge)",
-      "WebFetch(domain:fonts.googleapis.com)"
+      "WebFetch(domain:fonts.googleapis.com)",
+      "PowerShell(cmd /c \"dir /b \"\"D:\\\\bocano\\\\src\\\\assets\\\\\"\"\")"
     ]
   }
 }
