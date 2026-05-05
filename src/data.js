@@ -1,24 +1,36 @@
 // ─────────────────────────────────────────────────────────────
 //  SITE DATA  —  edit this file to customise your portfolio
+//  All text fields are { en: '...', ge: '...' }
 // ─────────────────────────────────────────────────────────────
 
 export const SITE = {
   name: 'Bocano Architecture',
 
   about: {
-    photo: '',
-    headline: 'Who We Are',
-    body: [
-      'We are a Tbilisi-based architectural studio with more than 10 years of experience in Architecture, Urban and Spatial Design. Our work is a combination of constant dialogue with the environment, versatile exploration methods, a creative approach, and in-depth technical knowledge.',
-      'We believe in lateral thinking, which provokes the ability to perceive patterns that are not obvious. Our aim is to produce work beneficial to society. With thoroughly thought, human-centered, and bespoke architectural solutions and design, we transform spaces into places.',
-    ],
-    services: 'Architectural Design, Urban Design, Spatial Design, Interior Design, and Pre-design services',
+    headline: {
+      en: 'Who We Are',
+      ge: 'ჩვენს შესახებ',
+    },
+    body: {
+      en: [
+        'We are a Tbilisi-based architectural studio with more than 10 years of experience in Architecture, Urban and Spatial Design. Our work is a combination of constant dialogue with the environment, versatile exploration methods, a creative approach, and in-depth technical knowledge.',
+        'We believe in lateral thinking, which provokes the ability to perceive patterns that are not obvious. Our aim is to produce work beneficial to society. With thoroughly thought, human-centered, and bespoke architectural solutions and design, we transform spaces into places.',
+      ],
+      ge: [
+        'ჩვენ ვართ თბილისში დაფუძნებული არქიტექტურული სტუდია, 10 წელზე მეტი გამოცდილებით არქიტექტურაში, ურბანულ და სივრცით დიზაინში. ჩვენი სამუშაო არის გარემოსთან მუდმივი დიალოგის, კვლევის მრავალფეროვანი მეთოდების, შემოქმედებითი მიდგომისა და ღრმა ტექნიკური ცოდნის ერთობლიობა.',
+        'ჩვენ გვჯეროდა ლატერალური აზროვნების, რომელიც ეხმარება არაუცხადო შაბლონების შეცნობაში. ჩვენი მიზანია საზოგადოებისთვის სასარგებლო სამუშაოს შექმნა. საფუძვლიანად გააზრებული, ადამიანზე ორიენტირებული და ინდივიდუალური არქიტექტურული გადაწყვეტილებებითა და დიზაინით, ჩვენ ვაქცევთ სივრცეებს ადგილებად.',
+      ],
+    },
+    services: {
+      en: 'Architectural Design, Urban Design, Spatial Design, Interior Design, and Pre-design services',
+      ge: 'არქიტექტურული დიზაინი, ურბანული დიზაინი, სივრცითი დიზაინი, ინტერიერის დიზაინი და წინასაპროექტო მომსახურება',
+    },
   },
 
   contact: {
     phone: '+995 598 43 63 39',
     email: 'support@bocano.ge',
-    city: 'Tbilisi, Georgia',
+    city: { en: 'Tbilisi, Georgia', ge: 'თბილისი, საქართველო' },
     instagram: 'https://instagram.com/',
     facebook: 'https://facebook.com/',
   },
@@ -26,29 +38,21 @@ export const SITE = {
 
 // ─────────────────────────────────────────────────────────────
 //  PROJECTS
-//
+//  name and type are { en: '...', ge: '...' }
 //  cover    → main photo shown in the grid  (put file in /public/images/)
 //  gallery  → array of photos shown inside the project page
-//
-//  Example with real photos:
-//  cover: '/images/villa-cover.jpg',
-//  gallery: [
-//    '/images/villa-1.jpg',
-//    '/images/villa-2.jpg',
-//    '/images/villa-3.jpg',
-//  ],
-// ─────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────  
 export const PROJECTS = [
   {
-    id: 1, 
-    name: 'Villa Bulachauri',
+    id: 1,
+    name: { en: 'Villa Bulachauri', ge: 'ვილა ბულაჩაური' },
     year: '2024',
-    type: 'Residential',
+    type: { en: 'Residential', ge: 'საცხოვრებელი' },
     cover: '/images/villa-tbilisi/b014.png',
     gallery: [
       '/images/villa-tbilisi/b014.png',
       '/images/villa-tbilisi/b001.png',
-      '/images/villa-tbilisi/b002.png', 
+      '/images/villa-tbilisi/b002.png',
       '/images/villa-tbilisi/b003.png',
       '/images/villa-tbilisi/b004.png',
       '/images/villa-tbilisi/b005.png',
@@ -74,14 +78,14 @@ export const PROJECTS = [
   },
   {
     id: 2,
-    name: 'A Residential Development of 3 Villas',
+    name: { en: 'A Residential Development of 3 Villas', ge: '3 ვილის საცხოვრებელი განვითარება' },
     year: '2024',
-    type: 'Residential',
+    type: { en: 'Residential', ge: 'საცხოვრებელი' },
     cover: '/images/glass-house/bk006.png',
-    gallery: [ 
+    gallery: [
       '/images/glass-house/bk006.png',
       '/images/glass-house/bk001.png',
-      '/images/glass-house/bk002.png', 
+      '/images/glass-house/bk002.png',
       '/images/glass-house/bk003.png',
       '/images/glass-house/bk004.png',
       '/images/glass-house/bk005.png',
@@ -89,15 +93,15 @@ export const PROJECTS = [
   },
   {
     id: 3,
-    name: 'Ice Cream House',
+    name: { en: 'Ice Cream House', ge: 'ნაყინის სახლი' },
     year: '2023',
-    type: 'Private',
+    type: { en: 'Private', ge: 'პირადი' },
     cover: '/images/hill-retreat/bok00.png',
     gallery: [
       '/images/hill-retreat/bok00.png',
       '/images/hill-retreat/bok01.png',
-      '/images/hill-retreat/bok02.png', 
-      '/images/hill-retreat/bok04.jpg',  
+      '/images/hill-retreat/bok02.png',
+      '/images/hill-retreat/bok04.jpg',
       '/images/hill-retreat/bok05.jpg',
       '/images/hill-retreat/bok06.png',
       '/images/hill-retreat/bok07.jpg',

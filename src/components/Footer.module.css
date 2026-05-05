@@ -36,6 +36,9 @@
 }
 .item:hover { color: white; }
 
+/* Phone and email are always Latin — force Oswald regardless of active language */
+.footer .latin { font-family: var(--sans); }
+
 .socials { display: flex; gap: 1rem; align-items: center; }
 .social {
   color: rgba(255,255,255,0.5);

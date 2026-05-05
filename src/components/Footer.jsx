@@ -1,8 +1,12 @@
 import { SITE } from '../data'
 import s from './Footer.module.css'
 import logo from '../assets/bocanoL.png'
+import { useLang } from '../LangContext'
+import { translations } from '../i18n'
 
 export default function Footer() {
+  const { lang } = useLang()
+  const tr = translations[lang].footer
   const { contact } = SITE
   return (
     <footer id="contact" className={s.footer}>
@@ -13,9 +17,9 @@ export default function Footer() {
           </a>
         </div>
         <div className={s.links}>
-          <a href={`tel:${contact.phone}`} className={s.item}>{contact.phone}</a>
-          <a href={`mailto:${contact.email}`} className={s.item}>{contact.email}</a>
-          <span className={s.item}>{contact.city}</span>
+          <a href={`tel:${contact.phone}`} className={`${s.item} ${s.latin}`}>{contact.phone}</a>
+          <a href={`mailto:${contact.email}`} className={`${s.item} ${s.latin}`}>{contact.email}</a>
+          <span className={s.item}>{contact.city[lang]}</span>
         </div>
         <div className={s.socials}>
           <a href={contact.facebook} target="_blank" rel="noreferrer" className={s.social}>
@@ -33,7 +37,7 @@ export default function Footer() {
         </div>
       </div>
       <div className={s.bottom}>
-        <span>&copy; {new Date().getFullYear()} Bocano Architecture. All rights reserved.</span>
+        <span>&copy; {new Date().getFullYear()} Bocano Architecture. {tr.rights}</span>
       </div>
     </footer>
   )

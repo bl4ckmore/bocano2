@@ -1,7 +1,9 @@
 import { PROJECTS } from '../data'
 import s from './ProjectsPage.module.css'
+import { useLang } from '../LangContext'
 
 export default function ProjectsPage({ onOpen }) {
+  const { lang } = useLang()
   return (
     <main id="projects" className={s.page}>
       <div className={s.grid}>
@@ -14,7 +16,7 @@ export default function ProjectsPage({ onOpen }) {
             {project.cover
               ? <img
                   src={project.cover}
-                  alt={project.name}
+                  alt={project.name[lang]}
                   className={s.img}
                   loading={i === 0 ? 'eager' : 'lazy'}
                   decoding="async"
@@ -22,8 +24,8 @@ export default function ProjectsPage({ onOpen }) {
               : <div className={s.placeholder} />
             }
             <div className={s.overlay}>
-              <span className={s.name}>{project.name}</span>
-              <span className={s.meta}>{project.type} · {project.year}</span>
+              <span className={s.name}>{project.name[lang]}</span>
+              <span className={s.meta}>{project.type[lang]} · {project.year}</span>
             </div>
           </div>
         ))}

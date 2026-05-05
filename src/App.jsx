@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { LangContext } from './LangContext'
 import Nav from './components/Nav'
 import ScrollToTop from './components/ScrollToTop'
 import Footer from './components/Footer'
@@ -56,9 +57,18 @@ function AppContent() {
 }
 
 export default function App() {
+  const [lang, setLang] = useState(() => localStorage.getItem('lang') || 'ge')
+
+  useEffect(() => {
+    document.documentElement.lang = lang
+    localStorage.setItem('lang', lang)
+  }, [lang])
+
   return (
     <BrowserRouter>
-      <AppContent />
+      <LangContext.Provider value={{ lang, setLang }}>
+        <AppContent />
+      </LangContext.Provider>
     </BrowserRouter>
   )
 }

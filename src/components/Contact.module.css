@@ -14,7 +14,7 @@
 }
 
 .title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--sans);
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 400;
   letter-spacing: -0.02em;
@@ -114,7 +114,7 @@
 }
 
 .thanksTitle {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--sans);
   font-size: 2rem;
   font-weight: 400;
   margin-bottom: 0.6rem;

@@ -35,18 +35,32 @@
   line-height: 1.1;
 }
 
-/* Gallery grid */
-.gallery {
+/* Featured hero — photo 1 left (full height), photos 2+3 right stacked */
+.featured {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+  height: 82vh;
   margin: 2rem 2.5rem 0;
 }
 
-/* First photo spans full width */
-.photoWide {
-  grid-column: 1 / -1;
-  aspect-ratio: 21 / 9 !important;
+.featuredMain {
+  grid-row: 1 / 3;
+}
+
+/* Photos inside featured must fill their grid cell — no aspect-ratio fighting */
+.featured .photo {
+  aspect-ratio: unset;
+  height: 100%;
+}
+
+/* Remaining photos grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 16px 2.5rem 0;
 }
 
 .photo {
@@ -64,13 +78,6 @@
   transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.imgContain {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
 
 .photo:hover .img { transform: scale(1.04); }
 
@@ -170,16 +177,43 @@
 }
 
 /* Mobile */
-@media (max-width: 900px) {
-  .gallery { grid-template-columns: repeat(2, 1fr); }
-  .photoWide { aspect-ratio: 16 / 9 !important; }
-}
-
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .header { padding: 2rem 1.25rem 1.5rem; }
-  .gallery { grid-template-columns: 1fr; }
-  .photoWide { aspect-ratio: 16 / 10 !important; }
-  .photo { aspect-ratio: 16 / 10; }
+
+  /* Featured — full bleed, tight gap */
+  .featured {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    height: auto;
+    margin: 0.75rem 0 0;
+    gap: 3px;
+  }
+  .featuredMain {
+    grid-column: 1 / 3;
+    grid-row: auto;
+    height: 72vw;
+  }
+  .featured .photo {
+    aspect-ratio: unset;
+    height: 50vw;
+  }
+
+  /* Gallery — full bleed, alternating rhythm */
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+    margin: 3px 0 0;
+    gap: 3px;
+  }
+  .gallery .photo {
+    height: 50vw;
+    aspect-ratio: unset;
+  }
+  /* Every 3rd photo breaks to full width */
+  .gallery .photo:nth-child(3n+1) {
+    grid-column: 1 / 3;
+    height: 65vw;
+  }
+
   .lbPrev { left: 0.25rem; }
   .lbNext { right: 0.25rem; }
 }
