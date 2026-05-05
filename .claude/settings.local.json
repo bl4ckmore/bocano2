@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(cmd /c \"dir /b \"\"D:\\\\bocano\\\\bocano_extracted\\\\\"\"\")",
+      "PowerShell(cmd /c \"dir /b \"\"D:\\\\bocano\\\\bocano_extracted\\\\home1\\\\\"\"\")",
+      "PowerShell(cmd /c \"dir /b \"\"D:\\\\bocano\\\\bocano_extracted\\\\home2\\\\\"\"\")",
+      "PowerShell(cmd /c \"dir /b \"\"D:\\\\bocano\\\\public\\\\images\\\\glass-house\\\\\"\"\")",
+      "PowerShell(cmd /c \"dir /b \"\"D:\\\\bocano\\\\bocano_extracted\\\\home3\\\\\"\"\")"
+    ]
+  }
+}
