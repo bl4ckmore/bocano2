@@ -1,5 +1,6 @@
 import { SITE } from '../data'
 import s from './Footer.module.css'
+import logo from '../assets/bocanoL.png'
 
 export default function Footer() {
   const { contact } = SITE
@@ -8,7 +9,7 @@ export default function Footer() {
       <div className={s.top}>
         <div className={s.brand}>
           <a href="#hero">
-            <img src="src/assets/bocanoL.png" alt="Bocano Architecture" className={s.logoImg}/>
+            <img src={logo} alt="Bocano Architecture" className={s.logoImg}/>
           </a>
         </div>
         <div className={s.links}>
