@@ -16,7 +16,7 @@ export const SITE = {
   },
 
   contact: {
-    phone: '+995 598 436 339',
+    phone: '+995 598 43 63 39',
     email: 'support@bocano.ge',
     city: 'Tbilisi, Georgia',
     instagram: 'https://instagram.com/',
