@@ -5,15 +5,14 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-auto-rows: 41vh;
   gap: 16px;
-  height: 82vh;
   margin: 2rem 2.5rem;
 }
 
 /* Project 1 — full left column */
 .cellLarge {
-  grid-row: 1 / 3;
+  grid-row: span 2;
 }
 
 .cell {
@@ -79,7 +78,7 @@
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    grid-auto-rows: auto;
     height: auto;
     margin: 1rem 1.25rem;
     gap: 12px;

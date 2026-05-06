@@ -10,7 +10,7 @@ export default function ProjectsPage({ onOpen }) {
         {PROJECTS.map((project, i) => (
           <div
             key={project.id}
-            className={`${s.cell} ${i === 0 ? s.cellLarge : ''}`}
+            className={`${s.cell} ${i % 3 === 0 ? s.cellLarge : ''}`}
             onClick={() => onOpen(project)}
           >
             {project.cover
