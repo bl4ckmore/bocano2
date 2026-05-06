@@ -13,7 +13,9 @@
       "WebFetch(domain:fonts.ge)",
       "Bash(curl -L \"https://fonts.ge/en/download/font/145/BPG-Nino-Mtavruli-Bold\" -o \"D:/bocano/public/fonts/BPGNinoMtavruliB.ttf\" --max-time 30 -w \"\\\\nHTTP %{http_code}\")",
       "Bash(python3 -c ' *)",
-      "Bash(unzip -o BPGNinoMtavruliB.ttf -d extracted/)"
+      "Bash(unzip -o BPGNinoMtavruliB.ttf -d extracted/)",
+      "PowerShell(Copy-Item *)",
+      "PowerShell(head *)"
     ]
   }
 }
